@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main() {
+	char  hex[17] = { "0123456789ABCDEF" };
+	int  c[20], i, n, base, dec;
+	scanf_s("%d", &dec);
+	i = 0;  base = 16;  n = dec;
+	do {
+		c[i++] = dec % base;
+		dec = dec / base;
+	} while (dec);
+	//printf("%d", n);
+	for (--i; i >= 0; i--)
+		printf("%c", hex[c[i]]);
+	printf("\n");
+	return 0;
+}
